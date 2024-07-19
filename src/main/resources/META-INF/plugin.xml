@@ -6,13 +6,18 @@
 
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
+    <!-- Text to display as description on Settings | Plugin page -->
+    <description>
+        <![CDATA[
+          This sample plugin illustrates how to create your custom tool window.<br>
+          See the
+          <a href="https://plugins.jetbrains.com/docs/intellij/tool-windows.html">Tool Windows</a>
+          for more information.
+        ]]>
+    </description>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.mersadesalati.demopluginuserfeedback.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <toolWindow id="Sample Calendar" secondary="true" icon="AllIcons.Toolwindows.WebToolWindow" anchor="right"
+                    factoryClass="com.github.mersadesalati.demopluginuserfeedback.toolWindow.CalendarToolWindowFactory"/>
     </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.mersadesalati.demopluginuserfeedback.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
 </idea-plugin>
