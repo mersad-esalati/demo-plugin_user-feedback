@@ -1,7 +1,7 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.mersadesalati.demopluginuserfeedback</id>
-    <name>demo-plugin_user-feedback</name>
+    <name>demo_user-feedback</name>
     <vendor>mersad-esalati</vendor>
 
     <depends>com.intellij.modules.platform</depends>
