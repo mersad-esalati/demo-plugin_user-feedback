@@ -1,18 +1,20 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.mersadesalati.demopluginuserfeedback</id>
-    <name>demo_user-feedback</name>
+    <name>demo_user-feedback_hedgehog</name>
     <vendor>mersad-esalati</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
+    <!-- Text to display as description on Settings | Plugin page -->
+    <description>
+        <![CDATA[
+          This is a sample plugin for gathering user feedback for hedgehog images<br>
+        ]]>
+    </description>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.mersadesalati.demopluginuserfeedback.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <toolWindow id="User Feedback Hedgehog" secondary="true" icon="AllIcons.Toolwindows.WebToolWindow" anchor="right"
+                    factoryClass="com.github.mersadesalati.demopluginuserfeedback.toolWindow.FeedbackToolWindowFactory"/>
     </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.mersadesalati.demopluginuserfeedback.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
 </idea-plugin>
