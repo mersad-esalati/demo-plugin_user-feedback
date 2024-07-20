@@ -1,7 +1,7 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.mersadesalati.demopluginuserfeedback</id>
-    <name>demo_user-feedback</name>
+    <name>demo_user-feedback_hedgehog</name>
     <vendor>mersad-esalati</vendor>
 
     <depends>com.intellij.modules.platform</depends>
@@ -9,15 +9,12 @@
     <!-- Text to display as description on Settings | Plugin page -->
     <description>
         <![CDATA[
-          This sample plugin illustrates how to create your custom tool window.<br>
-          See the
-          <a href="https://plugins.jetbrains.com/docs/intellij/tool-windows.html">Tool Windows</a>
-          for more information.
+          This is a sample plugin for gathering user feedback for hedgehog images<br>
         ]]>
     </description>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow id="Sample Calendar" secondary="true" icon="AllIcons.Toolwindows.WebToolWindow" anchor="right"
-                    factoryClass="com.github.mersadesalati.demopluginuserfeedback.toolWindow.CalendarToolWindowFactory"/>
+        <toolWindow id="User Feedback Hedgehog" secondary="true" icon="AllIcons.Toolwindows.WebToolWindow" anchor="right"
+                    factoryClass="com.github.mersadesalati.demopluginuserfeedback.toolWindow.FeedbackToolWindowFactory"/>
     </extensions>
 </idea-plugin>
