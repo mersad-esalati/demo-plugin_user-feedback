@@ -27,21 +27,16 @@ import java.util.Map;
 public class FeedbackToolWindowFactory implements ToolWindowFactory {
     private static final Logger logger = Logger.getInstance(FeedbackToolWindowFactory.class);
 
-    private final OkHttpClient httpClient;
+    private final OkHttpClient httpClient = new OkHttpClient();
 
     private int currentImageIndex = 0;
-    private final ArrayList<Map<String, Object>> imageList;
+    private ArrayList<Map<String, Object>> imageList = fetchImages();
 
     private JPanel panel;
     private JPanel feedbackPanel;
     private JLabel pictureLabel;
     private JLabel welcomeLabel;
     private JButton startButton;
-
-    public FeedbackToolWindowFactory() {
-        httpClient = new OkHttpClient();
-        imageList = fetchImages();
-    }
 
     // Method to fetch images from the API
     private ArrayList<Map<String, Object>> fetchImages() {
@@ -145,7 +140,7 @@ public class FeedbackToolWindowFactory implements ToolWindowFactory {
             }
         } else {
             logger.info("No More Images");
-            JOptionPane.showMessageDialog(panel, "Finished!! \nNo more images.", "Information", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(panel, "Finished!!", "Information", JOptionPane.INFORMATION_MESSAGE);
 
             resetToStart();
         }
@@ -268,6 +263,7 @@ public class FeedbackToolWindowFactory implements ToolWindowFactory {
 
         // Reset the image index
         currentImageIndex = 0;
+        imageList = fetchImages();
 
         // Show the welcome label and start button
         welcomeLabel.setVisible(true);
