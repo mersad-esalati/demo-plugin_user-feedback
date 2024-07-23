@@ -26,7 +26,7 @@ dependencies {
     // Add OkHttp dependency
     implementation("com.squareup.okhttp3:okhttp:4.9.3")
     // Add Gson dependency
-    implementation("com.google.code.gson:gson:2.8.9")
+    implementation("com.google.code.gson:gson:2.11.0")
 }
 
 // Set the JVM language level used to build the project.
